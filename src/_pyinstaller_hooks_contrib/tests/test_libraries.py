@@ -1529,3 +1529,11 @@ def test_moviepy_editor(pyi_builder):
     pyi_builder.test_source("""
         import moviepy.editor
     """)
+
+
+@importorskip('mscerts')
+def test_mscerts(pyi_builder):
+    pyi_builder.test_source("""
+        from mscerts import contents as read_certs
+        read_certs()
+    """)
